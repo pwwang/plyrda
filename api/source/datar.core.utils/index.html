@@ -1,0 +1,3604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>datar.core.utils - datar</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+      <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    
+      <link rel="stylesheet" href="../../../css/mkapi-common.css">
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#datarcoreutils" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="datar" class="md-header__button md-logo" aria-label="datar" data-md-component="logo">
+      
+  <img src="../../../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            datar
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              datar.core.utils
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/pwwang/datar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pwwang/datar
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="datar" class="md-nav__button md-logo" aria-label="datar" data-md-component="logo">
+      
+  <img src="../../../favicon.png" alt="logo">
+
+    </a>
+    datar
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/pwwang/datar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pwwang/datar
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Reference maps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference maps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reference maps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/ALL/" class="md-nav__link">
+        ALL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/base/" class="md-nav__link">
+        base
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/stats/" class="md-nav__link">
+        stats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/dplyr/" class="md-nav__link">
+        dplyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/tibble/" class="md-nav__link">
+        tibble
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/tidyr/" class="md-nav__link">
+        tidyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/datasets/" class="md-nav__link">
+        datasets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-maps/datar/" class="md-nav__link">
+        datar
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../porting_rules/" class="md-nav__link">
+        Porting rules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../import/" class="md-nav__link">
+        Import datar
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../f/" class="md-nav__link">
+        The f-expression
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Caveats
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Caveats" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Caveats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/indexing/" class="md-nav__link">
+        Indexing/Selection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/tibble_vs_dataframe/" class="md-nav__link">
+        Tibble vs. DataFrame
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/df_index_colname/" class="md-nav__link">
+        Data frame indexes and column names
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/nested_data_frames/" class="md-nav__link">
+        Nested data frames
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/list/" class="md-nav__link">
+        List in R vs in python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/ptypes/" class="md-nav__link">
+        Ptypes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/grouped/" class="md-nav__link">
+        Grouped/rowwise data frame
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/NAs/" class="md-nav__link">
+        NAs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../caveats/in/" class="md-nav__link">
+        in vs %in%
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/" class="md-nav__link">
+        Advanced usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/across/" class="md-nav__link">
+        across
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/add_column/" class="md-nav__link">
+        add_column
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/add_row/" class="md-nav__link">
+        add_row
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/arrange/" class="md-nav__link">
+        arrange
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/base/" class="md-nav__link">
+        base
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/between/" class="md-nav__link">
+        between
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/bind/" class="md-nav__link">
+        bind
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/case_when/" class="md-nav__link">
+        case_when
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/chop/" class="md-nav__link">
+        chop
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coalesce/" class="md-nav__link">
+        coalesce
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/complete/" class="md-nav__link">
+        complete
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/context/" class="md-nav__link">
+        context
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/count/" class="md-nav__link">
+        count
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/cumall/" class="md-nav__link">
+        cumall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/desc/" class="md-nav__link">
+        desc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/distinct/" class="md-nav__link">
+        distinct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/drop_na/" class="md-nav__link">
+        drop_na
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/enframe/" class="md-nav__link">
+        enframe
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/expand/" class="md-nav__link">
+        expand
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/expand_grid/" class="md-nav__link">
+        expand_grid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/extract/" class="md-nav__link">
+        extract
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/fill/" class="md-nav__link">
+        fill
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/filter/" class="md-nav__link">
+        filter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/filter-joins/" class="md-nav__link">
+        filter-joins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/full_seq/" class="md-nav__link">
+        full_seq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/datar/" class="md-nav__link">
+        datar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/group_by/" class="md-nav__link">
+        group_by
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/group_map/" class="md-nav__link">
+        group_map
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/group_split/" class="md-nav__link">
+        group_split
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/group_trim/" class="md-nav__link">
+        group_trim
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/lead-lag/" class="md-nav__link">
+        lead-lag
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/mutate-joins/" class="md-nav__link">
+        mutate-joins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/mutate/" class="md-nav__link">
+        mutate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/n_distinct/" class="md-nav__link">
+        n_distinct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/na_if/" class="md-nav__link">
+        na_if
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/near/" class="md-nav__link">
+        near
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/nest/" class="md-nav__link">
+        nest
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/nest-join/" class="md-nav__link">
+        nest-join
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/nth/" class="md-nav__link">
+        nth
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/pack/" class="md-nav__link">
+        pack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/pivot_longer/" class="md-nav__link">
+        pivot_longer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/pivot_wider/" class="md-nav__link">
+        pivot_wider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/pull/" class="md-nav__link">
+        pull
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/ranking/" class="md-nav__link">
+        ranking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/readme/" class="md-nav__link">
+        readme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/recode/" class="md-nav__link">
+        recode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/relocate/" class="md-nav__link">
+        relocate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/rename/" class="md-nav__link">
+        rename
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/replace_na/" class="md-nav__link">
+        replace_na
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/rownames/" class="md-nav__link">
+        rownames
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/rows/" class="md-nav__link">
+        rows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/rowwise/" class="md-nav__link">
+        rowwise
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/select/" class="md-nav__link">
+        select
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/separate/" class="md-nav__link">
+        separate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/setops/" class="md-nav__link">
+        setops
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/slice/" class="md-nav__link">
+        slice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/summarise/" class="md-nav__link">
+        summarise
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/tibble/" class="md-nav__link">
+        tibble
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/uncount/" class="md-nav__link">
+        uncount
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/unite/" class="md-nav__link">
+        unite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/with_groups/" class="md-nav__link">
+        with_groups
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1" type="checkbox" id="__nav_10_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1">
+        datar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          datar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar/" class="md-nav__link">
+        datar
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" >
+      
+      <label class="md-nav__link" for="__nav_10_2">
+        datar.core
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.core" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          datar.core
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core/" class="md-nav__link">
+        datar.core
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.collections/" class="md-nav__link">
+        datar.core.collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.middlewares/" class="md-nav__link">
+        datar.core.middlewares
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.defaults/" class="md-nav__link">
+        datar.core.defaults
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.options/" class="md-nav__link">
+        datar.core.options
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.operator/" class="md-nav__link">
+        datar.core.operator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.exceptions/" class="md-nav__link">
+        datar.core.exceptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.names/" class="md-nav__link">
+        datar.core.names
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.contexts/" class="md-nav__link">
+        datar.core.contexts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.utils/" class="md-nav__link">
+        datar.core.utils
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.grouped/" class="md-nav__link">
+        datar.core.grouped
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.types/" class="md-nav__link">
+        datar.core.types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.core.warn_builtin_names/" class="md-nav__link">
+        datar.core.warn_builtin_names
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.all/" class="md-nav__link">
+        datar.all
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        datar.utils
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.utils" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          datar.utils
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.utils/" class="md-nav__link">
+        datar.utils
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.utils.verbs/" class="md-nav__link">
+        datar.utils.verbs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        datar.dplyr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.dplyr" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          datar.dplyr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr/" class="md-nav__link">
+        datar.dplyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.count_tally/" class="md-nav__link">
+        datar.dplyr.count_tally
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.desc/" class="md-nav__link">
+        datar.dplyr.desc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.if_else/" class="md-nav__link">
+        datar.dplyr.if_else
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.pull/" class="md-nav__link">
+        datar.dplyr.pull
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.tidyselect/" class="md-nav__link">
+        datar.dplyr.tidyselect
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.summarise/" class="md-nav__link">
+        datar.dplyr.summarise
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.recode/" class="md-nav__link">
+        datar.dplyr.recode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.sets/" class="md-nav__link">
+        datar.dplyr.sets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.relocate/" class="md-nav__link">
+        datar.dplyr.relocate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.dfilter/" class="md-nav__link">
+        datar.dplyr.dfilter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.group_iter/" class="md-nav__link">
+        datar.dplyr.group_iter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.select/" class="md-nav__link">
+        datar.dplyr.select
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.rank/" class="md-nav__link">
+        datar.dplyr.rank
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.context/" class="md-nav__link">
+        datar.dplyr.context
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.rows/" class="md-nav__link">
+        datar.dplyr.rows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.distinct/" class="md-nav__link">
+        datar.dplyr.distinct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.lead_lag/" class="md-nav__link">
+        datar.dplyr.lead_lag
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.funs/" class="md-nav__link">
+        datar.dplyr.funs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.bind/" class="md-nav__link">
+        datar.dplyr.bind
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.arrange/" class="md-nav__link">
+        datar.dplyr.arrange
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.dslice/" class="md-nav__link">
+        datar.dplyr.dslice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.order_by/" class="md-nav__link">
+        datar.dplyr.order_by
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.across/" class="md-nav__link">
+        datar.dplyr.across
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.join/" class="md-nav__link">
+        datar.dplyr.join
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.group_by/" class="md-nav__link">
+        datar.dplyr.group_by
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.mutate/" class="md-nav__link">
+        datar.dplyr.mutate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.rename/" class="md-nav__link">
+        datar.dplyr.rename
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.dplyr.group_data/" class="md-nav__link">
+        datar.dplyr.group_data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        datar.tibble
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.tibble" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          datar.tibble
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tibble/" class="md-nav__link">
+        datar.tibble
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tibble.tibble/" class="md-nav__link">
+        datar.tibble.tibble
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tibble.verbs/" class="md-nav__link">
+        datar.tibble.verbs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_6" type="checkbox" id="__nav_10_6" >
+      
+      <label class="md-nav__link" for="__nav_10_6">
+        datar.tidyr
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.tidyr" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_6">
+          <span class="md-nav__icon md-icon"></span>
+          datar.tidyr
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr/" class="md-nav__link">
+        datar.tidyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.unite/" class="md-nav__link">
+        datar.tidyr.unite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.expand/" class="md-nav__link">
+        datar.tidyr.expand
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.pack/" class="md-nav__link">
+        datar.tidyr.pack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.pivot_long/" class="md-nav__link">
+        datar.tidyr.pivot_long
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.fill/" class="md-nav__link">
+        datar.tidyr.fill
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.complete/" class="md-nav__link">
+        datar.tidyr.complete
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.extract/" class="md-nav__link">
+        datar.tidyr.extract
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.funcs/" class="md-nav__link">
+        datar.tidyr.funcs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.chop/" class="md-nav__link">
+        datar.tidyr.chop
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.pivot_wide/" class="md-nav__link">
+        datar.tidyr.pivot_wide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.replace_na/" class="md-nav__link">
+        datar.tidyr.replace_na
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.drop_na/" class="md-nav__link">
+        datar.tidyr.drop_na
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.nest/" class="md-nav__link">
+        datar.tidyr.nest
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.uncount/" class="md-nav__link">
+        datar.tidyr.uncount
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.tidyr.separate/" class="md-nav__link">
+        datar.tidyr.separate
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_7" type="checkbox" id="__nav_10_7" >
+      
+      <label class="md-nav__link" for="__nav_10_7">
+        datar.stats
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.stats" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_7">
+          <span class="md-nav__icon md-icon"></span>
+          datar.stats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.stats/" class="md-nav__link">
+        datar.stats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.stats.funs/" class="md-nav__link">
+        datar.stats.funs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.stats.verbs/" class="md-nav__link">
+        datar.stats.verbs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" type="checkbox" id="__nav_10_8" >
+      
+      <label class="md-nav__link" for="__nav_10_8">
+        datar.datasets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.datasets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          datar.datasets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.datasets/" class="md-nav__link">
+        datar.datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_9" type="checkbox" id="__nav_10_9" >
+      
+      <label class="md-nav__link" for="__nav_10_9">
+        datar.base
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.base" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_9">
+          <span class="md-nav__icon md-icon"></span>
+          datar.base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base/" class="md-nav__link">
+        datar.base
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.trig_hb/" class="md-nav__link">
+        datar.base.trig_hb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.string/" class="md-nav__link">
+        datar.base.string
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.null/" class="md-nav__link">
+        datar.base.null
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.date/" class="md-nav__link">
+        datar.base.date
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.bessel/" class="md-nav__link">
+        datar.base.bessel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.logical/" class="md-nav__link">
+        datar.base.logical
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.arithmetic/" class="md-nav__link">
+        datar.base.arithmetic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.testing/" class="md-nav__link">
+        datar.base.testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.casting/" class="md-nav__link">
+        datar.base.casting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.special/" class="md-nav__link">
+        datar.base.special
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.na/" class="md-nav__link">
+        datar.base.na
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.constants/" class="md-nav__link">
+        datar.base.constants
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.complex/" class="md-nav__link">
+        datar.base.complex
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.funs/" class="md-nav__link">
+        datar.base.funs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.factor/" class="md-nav__link">
+        datar.base.factor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.table/" class="md-nav__link">
+        datar.base.table
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.cum/" class="md-nav__link">
+        datar.base.cum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.which/" class="md-nav__link">
+        datar.base.which
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.seq/" class="md-nav__link">
+        datar.base.seq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.random/" class="md-nav__link">
+        datar.base.random
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.base.verbs/" class="md-nav__link">
+        datar.base.verbs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_10" type="checkbox" id="__nav_10_10" >
+      
+      <label class="md-nav__link" for="__nav_10_10">
+        datar.datar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="datar.datar" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_10">
+          <span class="md-nav__icon md-icon"></span>
+          datar.datar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.datar/" class="md-nav__link">
+        datar.datar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.datar.funcs/" class="md-nav__link">
+        datar.datar.funcs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datar.datar.verbs/" class="md-nav__link">
+        datar.datar.verbs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CHANGELOG/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datarcoreutils" class="md-nav__link">
+    datar.core.utils
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/pwwang/datar/edit/master/docs/api/source/datar.core.utils.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <div class="mkapi-node">
+<h1 id="" class="mkapi-object mkapi-object-code plain">
+<span class="mkapi-object-kind mkapi-object-kind-code">SOURCE CODE</span>
+<span class="mkapi-object-prefix">datar.core.</span><span class="mkapi-object-name">utils</span>
+<span id="datar.core.utils"></span><a class="mkapi-docs-link" href="../../datar.core.utils">DOCS</a>
+</h1>
+
+<div class="mkapi-code">
+<div class="codehilite"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Core utilities&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">singledispatch</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span> <span class="k">as</span> <span class="n">Array</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Categorical</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">Series</span>
+<span class="kn">from</span> <span class="nn">pipda</span> <span class="kn">import</span> <span class="n">register_func</span>
+<span class="kn">from</span> <span class="nn">pipda.symbolic</span> <span class="kn">import</span> <span class="n">Reference</span>
+
+<span class="kn">from</span> <span class="nn">.exceptions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ColumnNotExistingError</span><span class="p">,</span>
+    <span class="n">DataUnrecyclable</span><span class="p">,</span>
+    <span class="n">NameNonUniqueError</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.contexts</span> <span class="kn">import</span> <span class="n">Context</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StringOrIter</span><span class="p">,</span>
+    <span class="n">Dtype</span><span class="p">,</span>
+    <span class="n">is_iterable</span><span class="p">,</span>
+    <span class="n">is_scalar</span><span class="p">,</span>
+    <span class="n">is_categorical</span><span class="p">,</span>
+    <span class="n">is_null</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.defaults</span> <span class="kn">import</span> <span class="n">DEFAULT_COLUMN_PREFIX</span><span class="p">,</span> <span class="n">NA_REPR</span>
+
+<span class="c1"># logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;datar&quot;</span><span class="p">)</span>  <span class="c1"># pylint: disable=invalid-name</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">stream_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>  <span class="c1"># pylint: disable=invalid-name</span>
+<span class="n">stream_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
+        <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">][</span><span class="si">%(name)s</span><span class="s2">][</span><span class="si">%(levelname)7s</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stream_handler</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">vars_select</span><span class="p">(</span><span id="datar.core.utils.vars_select"></span><a class="mkapi-docs-link" title="datar.core.utils.vars_select" href="../../datar.core.utils/#datar.core.utils.vars_select">DOCS</a>
+    <span class="n">all_columns</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="o">*</span><span class="n">columns</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">raise_nonexists</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">base0</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="c1"># TODO: support selecting data-frame columns</span>
+    <span class="sd">&quot;&quot;&quot;Select columns</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        all_columns: The column pool to select</span>
+<span class="sd">        *columns: arguments to select from the pool</span>
+<span class="sd">        raise_nonexist: Whether raise exception when column not exists</span>
+<span class="sd">            in the pool</span>
+<span class="sd">        base0: Whether indexes are 0-based if columns are selected by indexes.</span>
+<span class="sd">            If not given, will use `datar.base.get_option(&#39;index.base.0&#39;)`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The selected indexes for columns</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ColumnNotExistingError: When the column does not exist in the pool</span>
+<span class="sd">            and raise_nonexists is True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.collections</span> <span class="kn">import</span> <span class="n">Collection</span>
+    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">unique</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">column</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">Series</span><span class="p">)</span> <span class="k">else</span> <span class="n">column</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span>
+    <span class="p">]</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="n">Collection</span><span class="p">(</span><span class="o">*</span><span class="n">columns</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">all_columns</span><span class="p">),</span> <span class="n">base0</span><span class="o">=</span><span class="n">base0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">raise_nonexists</span> <span class="ow">and</span> <span class="n">selected</span><span class="o">.</span><span class="n">unmatched</span> <span class="ow">and</span> <span class="n">selected</span><span class="o">.</span><span class="n">unmatched</span> <span class="o">!=</span> <span class="p">{</span><span class="kc">None</span><span class="p">}:</span>
+        <span class="k">raise</span> <span class="n">ColumnNotExistingError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Columns `</span><span class="si">{</span><span class="n">selected</span><span class="o">.</span><span class="n">unmatched</span><span class="si">}</span><span class="s2">` do not exist.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">unique</span><span class="p">(</span><span class="n">selected</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">recycle_value</span><span class="p">(</span><span id="datar.core.utils.recycle_value"></span><a class="mkapi-docs-link" title="datar.core.utils.recycle_value" href="../../datar.core.utils/#datar.core.utils.recycle_value">DOCS</a>
+    <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Recycle a value based on a dataframe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value: The value to be recycled</span>
+<span class="sd">        size: The size to recycle to</span>
+<span class="sd">        name: The name to show in the error if failed to recycle</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The recycled value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO: follow base R&#39;s recycling rule? i.e. size 2 -&gt; 4</span>
+    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">NA</span>
+
+    <span class="k">if</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">length</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">`&quot;</span>
+        <span class="n">expect</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span> <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;(1, </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">raise</span> <span class="n">DataUnrecyclable</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Cannot recycle </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> to size </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;expect </span><span class="si">{</span><span class="n">expect</span><span class="si">}</span><span class="s2">, got </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">([[</span><span class="n">NA</span><span class="p">]</span> <span class="o">*</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">length</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="n">cats</span> <span class="o">=</span> <span class="n">categorized</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">categories</span> <span class="k">if</span> <span class="n">is_categorical</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">cats</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Categorical</span><span class="p">([],</span> <span class="n">categories</span><span class="o">=</span><span class="n">cats</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">NA</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+        <span class="c1"># try to keep Series class</span>
+        <span class="c1"># some operators can only do with it or with it correctly</span>
+        <span class="c1"># For example:</span>
+        <span class="c1"># Series([True, True]) &amp; Series([False, NA]) -&gt; [False, Fa.se]</span>
+        <span class="c1"># But with numpy.array, it raises error, since NA is a float</span>
+        <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">length</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># dtype = getattr(value, &#39;dtype&#39;, None)</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">length</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span>
+
+    <span class="k">if</span> <span class="n">cats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Categorical</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">cats</span><span class="p">)</span>
+
+    <span class="n">is_elem_iter</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_iterable</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_elem_iter</span><span class="p">:</span>
+        <span class="c1"># without dtype: VisibleDeprecationWarning</span>
+        <span class="c1"># return Array(value, dtype=object)</span>
+        <span class="c1"># The above does not keep [DataFrame()] structure</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="c1"># Avoid numpy.nan to be converted into &#39;nan&#39; when other elements are string</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">str_</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_null</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">Array</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">recycle_df</span><span class="p">(</span><span id="datar.core.utils.recycle_df"></span><a class="mkapi-docs-link" title="datar.core.utils.recycle_df" href="../../datar.core.utils/#datar.core.utils.recycle_df">DOCS</a>
+    <span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">df_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">value_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Recycle the dataframe based on value&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">length_of</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">recycle_value</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">length_of</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">df_name</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">recycle_value</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">length_of</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">value_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">value</span>
+
+
+<span class="k">def</span> <span class="nf">categorized</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span><span id="datar.core.utils.categorized"></span><a class="mkapi-docs-link" title="datar.core.utils.categorized" href="../../datar.core.utils/#datar.core.utils.categorized">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Get the Categorical object&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_categorical</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="nd">@singledispatch</span><span id="datar.core.utils.to_df"></span><a class="mkapi-docs-link" title="datar.core.utils.to_df" href="../../datar.core.utils/#datar.core.utils.to_df">DOCS</a>
+<span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert an object to a data frame&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="n">data</span><span class="p">})</span>
+
+
+<span class="nd">@to_df</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">StringOrIter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">ncols</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">ncols</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="c1"># ignore the name</span>
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="nd">@to_df</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">DataFrame</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">$</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">})</span>
+
+
+<span class="nd">@to_df</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Series</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Series</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="c1"># @to_df.register(SeriesGroupBy)</span>
+<span class="c1"># def _(data: SeriesGroupBy, name: str = None) -&gt; DataFrame:</span>
+<span class="c1">#     name = name or data.obj.name</span>
+<span class="c1">#     return data.obj.to_frame(name=name).groupby(data.grouper, dropna=False)</span>
+
+
+<span class="k">def</span> <span class="nf">check_column_uniqueness</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span><span id="datar.core.utils.check_column_uniqueness"></span><a class="mkapi-docs-link" title="datar.core.utils.check_column_uniqueness" href="../../datar.core.utils/#datar.core.utils.check_column_uniqueness">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Check if column names are unique of a dataframe&quot;&quot;&quot;</span>
+    <span class="n">uniq</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">uniq</span><span class="p">:</span>
+            <span class="n">uniq</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="ow">or</span> <span class="s2">&quot;Name is not unique&quot;</span>
+            <span class="k">raise</span> <span class="n">NameNonUniqueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dict_insert_at</span><span class="p">(</span><span id="datar.core.utils.dict_insert_at"></span><a class="mkapi-docs-link" title="datar.core.utils.dict_insert_at" href="../../datar.core.utils/#datar.core.utils.dict_insert_at">DOCS</a>
+    <span class="n">container</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">poskeys</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">remove</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Insert value to a certain position of a dict&quot;&quot;&quot;</span>
+    <span class="n">ret_items</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># type: List[Tuple[str, Any]]</span>
+    <span class="n">ret_items_append</span> <span class="o">=</span> <span class="n">ret_items</span><span class="o">.</span><span class="n">append</span>
+    <span class="n">matched</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">container</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">poskeys</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">matched</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">remove</span><span class="p">:</span>
+                <span class="n">ret_items_append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+            <span class="n">ret_items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">matched</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">poskeys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">remove</span><span class="p">:</span>
+                <span class="n">ret_items_append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">matched</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">poskeys</span><span class="p">:</span>
+            <span class="n">matched</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">ret_items_append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ret_items_append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ret_items</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">name_mutatable_args</span><span class="p">(</span><span id="datar.core.utils.name_mutatable_args"></span><a class="mkapi-docs-link" title="datar.core.utils.name_mutatable_args" href="../../datar.core.utils/#datar.core.utils.name_mutatable_args">DOCS</a>
+    <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Series</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Convert all mutatable arguments to named mappings, which can be easier</span>
+<span class="sd">    to mutate later on.</span>
+
+<span class="sd">    If there are Expression objects, keep it. So if an objects have multiple</span>
+<span class="sd">    names and it&#39;s built by an Expression, then the name might get lost here.</span>
+
+<span class="sd">    Examples:</span>
+
+<span class="sd">        &gt;&gt;&gt; s = Series([1], name=&#39;a&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; name_mutatable_args(s, b=2)</span>
+<span class="sd">        &gt;&gt;&gt; # {&#39;a&#39;: s, &#39;b&#39;: 2}</span>
+<span class="sd">        &gt;&gt;&gt; df = DataFrame({&#39;x&#39;: [3], &#39;y&#39;: [4]})</span>
+<span class="sd">        &gt;&gt;&gt; name_mutatable_args(df)</span>
+<span class="sd">        &gt;&gt;&gt; # {&#39;x&#39;: [3], &#39;y&#39;: [4]}</span>
+<span class="sd">        &gt;&gt;&gt; name_mutatable_args(d=df)</span>
+<span class="sd">        &gt;&gt;&gt; # {&#39;d$x&#39;: [3], &#39;d$y&#39;: [4]}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># order kept</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: dict</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+            <span class="n">ret</span><span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">ret</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">ret</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;series&quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Reference</span><span class="p">):</span>
+            <span class="n">ret</span><span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">_pipda_ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ret</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DEFAULT_COLUMN_PREFIX</span><span class="si">}{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
+
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;series&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">existing_keys</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">ret_key</span>
+                <span class="k">for</span> <span class="n">ret_key</span> <span class="ow">in</span> <span class="n">ret</span>
+                <span class="k">if</span> <span class="n">ret_key</span> <span class="o">==</span> <span class="n">key</span> <span class="ow">or</span> <span class="n">ret_key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="n">existing_keys</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">dict_insert_at</span><span class="p">(</span> <span class="c1"># type: ignore</span>
+                    <span class="n">ret</span><span class="p">,</span> <span class="n">existing_keys</span><span class="p">,</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">val</span><span class="p">},</span> <span class="n">remove</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">dkey</span><span class="p">,</span> <span class="n">dval</span> <span class="ow">in</span> <span class="n">val</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">ret</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">$</span><span class="si">{</span><span class="n">dkey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dval</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ret</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span> <span class="nf">arg_match</span><span class="p">(</span><span id="datar.core.utils.arg_match"></span><a class="mkapi-docs-link" title="datar.core.utils.arg_match" href="../../datar.core.utils/#datar.core.utils.arg_match">DOCS</a>
+    <span class="n">arg</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">argname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">errmsg</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Make sure arg is in one of the values.</span>
+
+<span class="sd">    Mimics `rlang::arg_match`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">errmsg</span><span class="p">:</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">errmsg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">argname</span><span class="si">}</span><span class="s2">` must be one of </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">errmsg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arg</span>
+
+
+<span class="k">def</span> <span class="nf">copy_attrs</span><span class="p">(</span><span class="n">df1</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">df2</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">deep</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span><span id="datar.core.utils.copy_attrs"></span><a class="mkapi-docs-link" title="datar.core.utils.copy_attrs" href="../../datar.core.utils/#datar.core.utils.copy_attrs">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Copy attrs from df2 to df1&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">df1</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">if</span> <span class="n">deep</span> <span class="k">else</span> <span class="n">val</span>
+
+
+<span class="k">def</span> <span class="nf">nargs</span><span class="p">(</span><span class="n">fun</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span><span id="datar.core.utils.nargs"></span><a class="mkapi-docs-link" title="datar.core.utils.nargs" href="../../datar.core.utils/#datar.core.utils.nargs">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Get the number of arguments of a function&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">position_at</span><span class="p">(</span><span id="datar.core.utils.position_at"></span><a class="mkapi-docs-link" title="datar.core.utils.position_at" href="../../datar.core.utils/#datar.core.utils.position_at">DOCS</a>
+    <span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">base0</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">raise_exc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get the 0-based position right at the given pos</span>
+
+<span class="sd">    When `pos` is negative, it acts like 0-based, meaning `-1` will anyway</span>
+<span class="sd">    represent the last position regardless of `base0`</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pos: The given position</span>
+<span class="sd">        length: The length of the pool</span>
+<span class="sd">        base0: Whether the given `pos` is 0-based</span>
+<span class="sd">        raise_exc: Raise error if `pos` is out of range?</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The 0-based position</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.collections</span> <span class="kn">import</span> <span class="n">Collection</span>
+
+    <span class="n">coll</span> <span class="o">=</span> <span class="n">Collection</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="n">length</span><span class="p">,</span> <span class="n">base0</span><span class="o">=</span><span class="n">base0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">raise_exc</span> <span class="ow">and</span> <span class="n">coll</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+        <span class="c1"># pylint: disable=raising-bad-type</span>
+        <span class="k">raise</span> <span class="n">coll</span><span class="o">.</span><span class="n">error</span>
+    <span class="k">return</span> <span class="n">coll</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">position_after</span><span class="p">(</span><span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">base0</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span><span id="datar.core.utils.position_after"></span><a class="mkapi-docs-link" title="datar.core.utils.position_after" href="../../datar.core.utils/#datar.core.utils.position_after">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Get the 0-based position right at the given pos</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pos: The given position</span>
+<span class="sd">        length: The length of the pool</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The position before the given position</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">base0</span> <span class="o">=</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;index.base.0&quot;</span><span class="p">,</span> <span class="n">base0</span><span class="p">)</span>
+    <span class="c1"># after 0 with 1-based, should insert to first column</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">base0</span> <span class="ow">and</span> <span class="n">pos</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="k">return</span> <span class="n">position_at</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">base0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">get_option</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span><span id="datar.core.utils.get_option"></span><a class="mkapi-docs-link" title="datar.core.utils.get_option" href="../../datar.core.utils/#datar.core.utils.get_option">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Get the option with key.</span>
+
+<span class="sd">    This is for interal use mostly.</span>
+
+<span class="sd">    This is a shortcut for:</span>
+<span class="sd">    &gt;&gt;&gt; if value is not None:</span>
+<span class="sd">    &gt;&gt;&gt;     return value</span>
+<span class="sd">    &gt;&gt;&gt; from datar.base import get_option</span>
+<span class="sd">    &gt;&gt;&gt; return get_option(key)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">get_option</span> <span class="k">as</span> <span class="n">get_option_</span>
+
+    <span class="k">return</span> <span class="n">get_option_</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">apply_dtypes</span><span class="p">(</span><span id="datar.core.utils.apply_dtypes"></span><a class="mkapi-docs-link" title="datar.core.utils.apply_dtypes" href="../../datar.core.utils/#datar.core.utils.apply_dtypes">DOCS</a>
+    <span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Dtype</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dtype</span><span class="p">]]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Apply dtypes to data frame&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">dtypes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dtypes</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">dtypes</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">inferred</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">inferred</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtypes</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">dtypes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="p">[</span><span class="n">dtypes</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="c1"># type: ignore</span>
+
+    <span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">):</span>
+                    <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">keep_column_order</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span><span id="datar.core.utils.keep_column_order"></span><a class="mkapi-docs-link" title="datar.core.utils.keep_column_order" href="../../datar.core.utils/#datar.core.utils.keep_column_order">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Keep the order of columns as given `order`</span>
+
+<span class="sd">    We cannot do `df[order]` directly, since `df` may have nested df columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+            <span class="n">out_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out_columns</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">dfcol</span> <span class="k">for</span> <span class="n">dfcol</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">dfcol</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">))</span>
+            <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">out_columns</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Given `order` does not select all columns.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">out_columns</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">reconstruct_tibble</span><span class="p">(</span><span id="datar.core.utils.reconstruct_tibble"></span><a class="mkapi-docs-link" title="datar.core.utils.reconstruct_tibble" href="../../datar.core.utils/#datar.core.utils.reconstruct_tibble">DOCS</a>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span>  <span class="c1"># pylint: disable=redefined-builtin</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">ungrouped_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">keep_rowwise</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reconstruct the output dataframe based on input dataframe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input: The input data frame</span>
+<span class="sd">        output: The output data frame</span>
+<span class="sd">        ungrouped_vars: Variables to exclude from grouping</span>
+<span class="sd">        keep_rowwise: Whether rowwise structure should be kept</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        The reconstructed dataframe.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">setdiff</span><span class="p">,</span> <span class="n">intersect</span>
+    <span class="kn">from</span> <span class="nn">..dplyr</span> <span class="kn">import</span> <span class="n">group_vars</span><span class="p">,</span> <span class="n">group_by_drop_default</span>
+    <span class="kn">from</span> <span class="nn">.grouped</span> <span class="kn">import</span> <span class="n">DataFrameGroupBy</span><span class="p">,</span> <span class="n">DataFrameRowwise</span>
+
+    <span class="k">if</span> <span class="n">ungrouped_vars</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ungrouped_vars</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">old_groups</span> <span class="o">=</span> <span class="n">group_vars</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+    <span class="n">new_groups</span> <span class="o">=</span> <span class="n">intersect</span><span class="p">(</span><span class="n">setdiff</span><span class="p">(</span><span class="n">old_groups</span><span class="p">,</span> <span class="n">ungrouped_vars</span><span class="p">),</span> <span class="n">output</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">DataFrameRowwise</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">DataFrameRowwise</span><span class="p">(</span>
+                <span class="n">output</span><span class="p">,</span>
+                <span class="n">_group_vars</span><span class="o">=</span><span class="n">new_groups</span><span class="p">,</span>
+                <span class="n">_group_drop</span><span class="o">=</span><span class="n">group_by_drop_default</span><span class="p">(</span><span class="nb">input</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">keep_rowwise</span>
+            <span class="k">else</span> <span class="n">output</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">DataFrameGroupBy</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_groups</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">DataFrameGroupBy</span><span class="p">(</span>
+            <span class="n">output</span><span class="p">,</span>
+            <span class="n">_group_vars</span><span class="o">=</span><span class="n">new_groups</span><span class="p">,</span>
+            <span class="n">_group_drop</span><span class="o">=</span><span class="n">group_by_drop_default</span><span class="p">(</span><span class="nb">input</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">output</span>
+
+    <span class="n">copy_attrs</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">df_getitem</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">ref</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span><span id="datar.core.utils.df_getitem"></span><a class="mkapi-docs-link" title="datar.core.utils.df_getitem" href="../../datar.core.utils/#datar.core.utils.df_getitem">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Select columns from a data frame</span>
+
+<span class="sd">    If the column is a data frame, select that data frame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ref</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cols</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span> <span class="nf">df_setitem</span><span class="p">(</span><span id="datar.core.utils.df_setitem"></span><a class="mkapi-docs-link" title="datar.core.utils.df_setitem" href="../../datar.core.utils/#datar.core.utils.df_setitem">DOCS</a>
+    <span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">allow_dups</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Assign an item to a dataframe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df: The data frame</span>
+<span class="sd">        name: The name of the item</span>
+<span class="sd">        value: The value to insert</span>
+<span class="sd">        allow_dups: Allow duplicated names</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        df itself or a merged df</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">recycle_value</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+        <span class="c1"># nested df</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">$</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">allow_dups</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">value</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># keep the list structure</span>
+        <span class="c1"># otherwise, keep array to have dtype kept</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># drop the index/match the index of df</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># tuple turned into list in recycle_value</span>
+    <span class="c1"># if isinstance(value, tuple):</span>
+    <span class="c1">#     # (&#39;A&#39;, array([1,2,3]))</span>
+    <span class="c1">#     # VisibleDeprecationWarning</span>
+    <span class="c1">#     value = list(value)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_dups</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">allow_duplicates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">fillna_safe</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">rep</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">NA_REPR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">:</span><span id="datar.core.utils.fillna_safe"></span><a class="mkapi-docs-link" title="datar.core.utils.fillna_safe" href="../../datar.core.utils/#datar.core.utils.fillna_safe">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Safely replace NA in data, as we can&#39;t just fillna for</span>
+<span class="sd">    a Categorical data directly.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: The data to fill NAs</span>
+<span class="sd">        rep: The replacement for NAs</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Data itself if it has no NAs.</span>
+<span class="sd">        For Categorical data, `rep` will be added to categories</span>
+<span class="sd">        Otherwise a Array object with NAs replaced with `rep` is returned with</span>
+<span class="sd">        dtype object.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: when `rep` exists in data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># elementwise comparison failed; returning scalar instead</span>
+    <span class="c1"># if rep in data:</span>
+    <span class="k">if</span> <span class="n">rep</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The value to replace NAs is already present in data.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_null</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="k">if</span> <span class="n">is_categorical</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">categorized</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">add_categories</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
+
+    <span class="c1"># rep may not be the same dtype as data</span>
+    <span class="k">return</span> <span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+
+<span class="k">def</span> <span class="nf">na_if_safe</span><span class="p">(</span><span id="datar.core.utils.na_if_safe"></span><a class="mkapi-docs-link" title="datar.core.utils.na_if_safe" href="../../datar.core.utils/#datar.core.utils.na_if_safe">DOCS</a>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">NA_REPR</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Dtype</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Replace value with NA</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: The data to replace value with NA</span>
+<span class="sd">        value: The value to match</span>
+<span class="sd">        dtype: Convert the data to dtype after replacement</span>
+<span class="sd">            If data is Categorical, this is ignored</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        Array or categorical</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_categorical</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="c1"># ignore dtype</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">categorized</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># value to NA, value in categories removed</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">NA</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">NA</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span> <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">out</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">length_of</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span><span id="datar.core.utils.length_of"></span><a class="mkapi-docs-link" title="datar.core.utils.length_of" href="../../datar.core.utils/#datar.core.utils.length_of">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Get the length of a value, scalar gets 1&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dedup_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">all_names</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span><span id="datar.core.utils.dedup_name"></span><a class="mkapi-docs-link" title="datar.core.utils.dedup_name" href="../../datar.core.utils/#datar.core.utils.dedup_name">DOCS</a>
+    <span class="sd">&quot;&quot;&quot;Check if a name is a duplicated name in all_names,</span>
+<span class="sd">    return the deduplicated name.</span>
+
+<span class="sd">    In other to support duplicated keyword arguments in R:</span>
+<span class="sd">        &gt;&gt;&gt; df %&gt;% mutate(a=1, a=a*2)</span>
+
+<span class="sd">    Now you can to it with datar:</span>
+<span class="sd">        &gt;&gt;&gt; df &gt;&gt; mutate(a_=1, a=f.a*2)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name: The name to deduplicate</span>
+<span class="sd">        all_names: all names</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The deduplicated name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span>
+
+    <span class="c1"># now determine whehter the real name is name[:-1]</span>
+    <span class="c1"># because the name could be &quot;a__&quot; (&quot;a_&quot; is for sure in all_names)</span>
+    <span class="c1"># we need to check if &quot;a&quot; is also in all_names</span>
+    <span class="c1"># otherwise, the realname is &quot;a_&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">all_names</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">name</span>
+
+
+<span class="k">def</span> <span class="nf">register_numpy_func_x</span><span class="p">(</span><span id="datar.core.utils.register_numpy_func_x"></span><a class="mkapi-docs-link" title="datar.core.utils.register_numpy_func_x" href="../../datar.core.utils/#datar.core.utils.register_numpy_func_x">DOCS</a>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">np_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">trans_in</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">trans_out</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">doc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Register numpy function with single argument x</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name: The name of the function to be returned</span>
+<span class="sd">        np_name: The name of the function from numpy</span>
+<span class="sd">        trans_in: Transformation for input before sending to numpy function</span>
+<span class="sd">        trans_out: Transformation for output</span>
+<span class="sd">        doc: The docstring for the function</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The registered function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">numpy</span><span class="p">,</span> <span class="n">np_name</span><span class="p">)</span>
+
+    <span class="nd">@register_func</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">Context</span><span class="o">.</span><span class="n">EVAL</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_func</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Registered function from numpy&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">trans_in</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">trans_in</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">trans_out</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">trans_out</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="n">_func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">_func</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc</span>
+    <span class="k">return</span> <span class="n">_func</span>
+</code></pre></div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+        <script src="../../../js/mkapi.js"></script>
+      
+    
+  </body>
+</html>
